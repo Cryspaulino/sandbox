@@ -1,0 +1,20 @@
+{
+  "name": "wdd360-practice",
+  "version": "1.0.0",
+  "description": "To set up a new node server",
+  "repository": {
+    "type": "git",
+    "url": "wdd360-practice"
+  },
+  "license": "ISC",
+  "author": "Crystal Paulino",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "test": "pnpm run start"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "pnpm": "^10.33.2"
+  }
+}

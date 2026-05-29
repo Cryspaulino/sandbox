@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+<script src="../js/cart.js"></script>
+
+// const cart = await getCollection("cart");
+const title = "Cart";
+---
+
+<BaseLayout title={title}>
+  <section>
+    <!-- <ul>
+      {
+        cart.map((item) => (
+          <li>
+            <a href={`/cart/${item.id}/`}>
+              <h4 class="name">{item.data.name}</h4>
+              <p class="price">{item.data.price}</p>
+            </a>
+          </li>
+        ))
+      }
+    </ul> -->
+  </section>
+</BaseLayout>
