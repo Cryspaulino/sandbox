@@ -8,6 +8,7 @@
   <div class="hero">
     <h2>Welcome!</h2>
     <Login />
+    <UserProfile />
   </div>
 </section>
 

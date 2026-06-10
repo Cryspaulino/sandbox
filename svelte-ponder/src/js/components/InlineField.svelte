@@ -27,17 +27,17 @@
     value = originalValue;
   }
 
-  function onInputKeydown(e: KeyboardEvent) {
-    if (e.key === "Enter" && type !== "textarea") {
-      e.preventDefault();
-      commitEdit();
-    }
+  // function onInputKeydown(e: KeyboardEvent) {
+  //   if (e.key === "Enter" && type !== "textarea") {
+  //     e.preventDefault();
+  //     commitEdit();
+  //   }
 
-    if (e.key === "Escape") {
-      e.preventDefault();
-      cancelEdit();
-    }
-  }
+  //   if (e.key === "Escape") {
+  //     e.preventDefault();
+  //     cancelEdit();
+  //   }
+  // }
 
   function handleKeyDown(e: KeyboardEvent) {
     if (e.key === "Enter" && type !== "textarea") {
@@ -56,10 +56,10 @@
   <div class="label">{label}</div>
   {#if isEditing}
     {#if type === "textarea"}
-      <textarea bind:value onblur={commitEdit} onkeydown={onInputKeydown}>
+      <textarea bind:value onblur={commitEdit} onkeydown={handleKeyDown}>
       </textarea>
     {:else}
-      <input {type} bind:value onblur={commitEdit} onkeydown={onInputKeydown} />
+      <input {type} bind:value onblur={commitEdit} onkeydown={handleKeyDown} />
     {/if}
   {:else}
     <p class="value" onclick={startEdit}> {value} </p>
