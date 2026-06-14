@@ -1,0 +1,106 @@
+1. **Read the API documentation**
+
+   * Review the `/places/autocomplete` endpoint for searching locations.
+   * Review the `/identifications` endpoint for getting identifications.
+   * Note required query parameters and response structure.
+
+2. **Set up your project**
+
+   * Create an HTML page with:
+
+     * A text input for place searches.
+     * A Search button.
+     * A dropdown/list for place results.
+     * A section to display identifications.
+
+3. **Create the place search form**
+
+   * Add an input field where users type a city, park, state, etc.
+   * Add a button that triggers a search.
+
+4. **Search for places**
+
+   * When the user clicks Search:
+
+     * Read the input value.
+     * Send a GET request to:
+
+       ```
+       https://api.inaturalist.org/v1/places/autocomplete?q=SEARCH_TERM
+       ```
+     * Convert the response to JSON.
+
+5. **Display matching places**
+
+   * Loop through the returned places.
+   * Show each place name in a dropdown or selectable list.
+   * Store the place's `id` value because it will be needed later.
+
+6. **Handle place selection**
+
+   * When a user selects a place:
+
+     * Retrieve the selected place ID.
+     * Save it in a variable.
+
+7. **Request identifications for the selected place**
+
+   * Send a GET request similar to:
+
+     ```
+     https://api.inaturalist.org/v1/identifications?place_id=PLACE_ID
+     ```
+   * Convert the response to JSON.
+
+8. **Extract useful identification data**
+
+   * For each result, find:
+
+     * Species/common name.
+     * Scientific name (optional).
+     * Image URL.
+   * Check that an image exists before displaying it.
+
+9. **Create display cards**
+
+   * For each identification:
+
+     * Create a card `<div>`.
+     * Add an `<img>` element.
+     * Add the organism name in a heading.
+     * Optionally add scientific name below it.
+
+10. **Display the cards**
+
+    * Append each card to the results container.
+    * Clear old results before showing new ones.
+
+11. **Add basic styling**
+
+    * Use CSS Grid or Flexbox.
+    * Give cards:
+
+      * Padding
+      * Borders
+      * Rounded corners
+      * Consistent image sizes
+      * Hover effects
+
+12. **Handle errors**
+
+    * Show a message if:
+
+      * No places are found.
+      * No identifications are returned.
+      * The API request fails.
+
+13. **Test the full workflow**
+
+    * Search for a place.
+    * Select a result.
+    * Verify identifications load.
+    * Verify names and images display correctly.
+
+**Flow Summary**
+
+User enters place → Search places API → Display matching places → User selects place → Request identifications using place ID → Display identification names and images in cards.
