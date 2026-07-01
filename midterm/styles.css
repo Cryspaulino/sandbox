@@ -1,0 +1,60 @@
+* {
+  padding: 5px;
+}
+
+form {
+  /* height: 200px; */
+  width: 500px;
+  display: flex;
+  /* flex-direction: column; */
+  border: 1px rgb(248, 248, 188) solid;
+  margin-bottom: 20px;
+
+  input,
+  button {
+    width: 200px;
+    margin: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+li {
+  list-style: none;
+
+  button {
+    background-color: rgb(247, 240, 240);
+    border-width: 0.2px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active, .selected{
+        background-color: lightsalmon;
+    }
+  }
+}
+
+#results{
+    h4 {
+        margin-bottom: 2px;
+    }
+    
+}
+
+img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+section {
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+
